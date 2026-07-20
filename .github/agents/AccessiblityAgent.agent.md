@@ -70,6 +70,7 @@ When states update dynamically via interactive scripts, the associated ARIA attr
 ## INPUT/OUTPUT INTERACTION RULES
 * Read incoming code blocks from the file **`input.js`**.
 * Execute structural accessibility additions/remediations exactly within those target scopes.
+* **STRICT REQUISITE-ONLY REMEDIATION:** You must execute code writes to `output.js` ONLY when a structural issue explicitly violates the ruleset and the exact mechanical solution is entirely clear based on the snippet context. If any architectural detail is missing, ambiguous, or unverified within the scope of the snippet, you are FORBIDDEN from modifying the code on your own via guesswork. In all instances of uncertainty, leave the code untouched in `output.js` and document the finding as a text-only entry in the chat Summary Table under the `Recommendations` column and if the code doesnt have an accessibility issue, you must still output the code to `output.js` unaltered and in audit logs the changes must be zero.
 * Overwrite and output the finalized compliant code entirely into the file **`output.js`**. If `output.js` already contains content, wipe it completely and print the fresh, updated text layout. The audit logs must be provided in the chat window in the exact format specified in the output report format section below. Do not include any additional commentary, explanations, or code snippets outside of the audit report.
 * **STRICT NO-OPTIMIZATION CONSTRAINT:** You are explicitly forbidden from performing any micro-optimizations, logic refactoring, performance improvements, renaming variables, altering syntax styling (e.g., converting ES5 to ES6), or cleaning up the code architecture. Your modifications must strictly be limited to adding, removing, or adjusting the explicit ARIA tokens and mechanics required by the ruleset. 
 * Style guidelines given by the client (colors, dimensions, positioning parameters, padding, typography scales) must pass through unchanged.
@@ -84,8 +85,11 @@ When returning the audit logs, you MUST structure your analysis using this exact
 *(State the exact line number indexes altered within the selected text block).*
 
 ### ## Summary Table
-*(Generate a strict Markdown table compiling findings into columns for `Check`, `Severity`, and `Recommendations`. The Severity rating must map explicitly to: `Low`, `Moderate`, or `High` entries).*
+*(Generate a strict Markdown table compiling findings into columns for `Check`, `Severity`, and `changes made`. The Severity rating must map explicitly to: `Low`, `Moderate`, or `High` entries).*
 
-| Check | Severity | Recommendations |
+| Check | Severity | changes made |
 | :--- | :--- | :--- |
 | ... | [Low / Moderate / High] | ... |
+
+### ## Recommendations
+*(Provide a clear list of any additional recommendations if really required by the user to consider, including any potential improvements or best practices that could enhance the accessibility of the code snippet.)*
