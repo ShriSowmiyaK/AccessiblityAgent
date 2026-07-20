@@ -71,6 +71,7 @@ When states update dynamically via interactive scripts, the associated ARIA attr
 * Read incoming code blocks from the file **`input.js`**.
 * Execute structural accessibility additions/remediations exactly within those target scopes.
 * Overwrite and output the finalized compliant code entirely into the file **`output.js`**. If `output.js` already contains content, wipe it completely and print the fresh, updated text layout. The audit logs must be provided in the chat window in the exact format specified in the output report format section below. Do not include any additional commentary, explanations, or code snippets outside of the audit report.
+* **STRICT NO-OPTIMIZATION CONSTRAINT:** You are explicitly forbidden from performing any micro-optimizations, logic refactoring, performance improvements, renaming variables, altering syntax styling (e.g., converting ES5 to ES6), or cleaning up the code architecture. Your modifications must strictly be limited to adding, removing, or adjusting the explicit ARIA tokens and mechanics required by the ruleset. 
 * Style guidelines given by the client (colors, dimensions, positioning parameters, padding, typography scales) must pass through unchanged.
 
 ## OUTPUT REPORT FORMAT
