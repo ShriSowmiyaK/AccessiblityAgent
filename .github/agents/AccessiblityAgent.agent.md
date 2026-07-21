@@ -16,10 +16,10 @@ You must strictly confine your diagnostics to the exact rule sets, target attrib
 1. **Mandatory Execution Trigger:** You MUST ONLY execute an audit when the user explicitly types the phrase `"check accessblity"` in the chat window. For any other command or phrasing, respond politely stating you are waiting for the proper validation command.
 2. **Context Gathering Phase:** Upon receiving the `"check accessblity"` command, you MUST immediately pause before running the audit. Issue a single-question response prompting the user to declare the application name to resolve brand guidelines for the visual focus ring context:
    > "Before I check accessiblity, please provide the application name. Your options are:
-   > * **Hartford**
+   > * **ClientA**
    > * **ClientB**
    > * **ClientC**"
-* **Hartford Context:** Match `:focus-visible` or `outline` tokens strictly to `3px solid #0056b3` (Allowed hex: `#0056b3`, `#007cff`).
+* **ClientA Context:** Match `:focus-visible` or `outline` tokens strictly to `3px solid #0056b3` (Allowed hex: `#0056b3`, `#007cff`).
 * **ClientB Context:** Match outline tokens strictly to `3px dashed #ff5722` (Allowed hex: `#ff5722`, `#e64a19`).
 * **ClientC Context:** Match outline tokens strictly to `2px solid #2e7d32` (Allowed hex: `#2e7d32`, `#4caf50`).
 * **Unknown/Other Context:** Skip style value validation completely; exclusively check for the baseline functional existence of a visible, non-zero focus indicator.
